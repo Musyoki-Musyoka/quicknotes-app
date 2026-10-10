@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuickNotes: a simple place for your ideas, reminders and study notes.">
+    <title>QuickNotes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1>QuickNotes</h1>
+        <p>Capture ideas before they disappear.</p>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="add-heading">
+        <h2 id="add-heading">Add a note</h2>
+        <p class="section-intro" id="note-help">A small reminder, a work task or something to study. Up to 200 characters.</p>
+
+        <form id="note-form" novalidate>
+          <div class="form-field note-field">
+            <label for="note-input">New note</label>
+            <input
+              type="text"
+              id="note-input"
+              name="note"
+              placeholder="Type a note..."
+              aria-describedby="note-help error-message"
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="form-field category-field">
+            <label for="note-category">Category</label>
+            <select id="note-category" name="category">
+              <option value="personal">Personal</option>
+              <option value="work">Work</option>
+              <option value="study">Study</option>
+            </select>
+          </div>
+
+          <button type="submit">Add Note</button>
+        </form>
+
+        <p id="error-message" role="alert"></p>
+        <p id="storage-message" role="status"></p>
+      </section>
+
+      <section aria-labelledby="notes-heading">
+        <div class="section-heading">
+          <h2 id="notes-heading">Your notes</h2>
+          <p id="note-count" aria-live="polite">You have no notes yet.</p>
+        </div>
+
+        <label for="search-input">Search notes</label>
+        <input
+          type="search"
+          id="search-input"
+          name="search"
+          placeholder="Find a word or phrase..."
+          autocomplete="off"
+        >
+        <ul id="notes-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 QuickNotes. Built during Web Foundations.</p>
+      <p>Notes are saved in this browser, on this device.</p>
+    </footer>
+  </body>
+</html>
